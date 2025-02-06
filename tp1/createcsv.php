@@ -1,5 +1,7 @@
 <?php
 
+use Classe1\produits;
+
 require_once ("Classe1/produits.php");
 
 echo "<h1>Produits avec TVA</h1>";
