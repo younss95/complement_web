@@ -8,60 +8,23 @@ class produits
 
     public $prixHT;
 
+    public $TVA_UE = 1.15;
+    public $TVA_NONUE = 1.18;
+
     public function __construct($nom, $origine, $prixHT){
         $this->nom = $nom;
         $this->origine = $origine;
         $this->prixHT = $prixHT;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getNom()
-    {
-        return $this->nom;
+
+    public function calculTVAUE(){
+        // Calcule la TVA puis la multiplie par 100
+        return ($this->prixHT * $this->TVA_UE) * 100;
     }
 
-    /**
-     * @param mixed $nom
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
+    public function calculTVNONUE(){
+        // Calcule la TVA puis la multiplie par 100
+        return ($this->prixHT * $this->TVA_NONUE) * 100;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getPrixHT()
-    {
-        return $this->prixHT;
-    }
-
-    /**
-     * @param mixed $prixHT
-     */
-    public function setPrixHT($prixHT)
-    {
-        $this->prixHT = $prixHT;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getOrigine()
-    {
-        return $this->origine;
-    }
-
-    /**
-     * @param mixed $origine
-     */
-    public function setOrigine($origine)
-    {
-        $this->origine = $origine;
-    }
-
-
-
 }
